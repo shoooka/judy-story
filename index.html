@@ -274,6 +274,7 @@
     .jm-node-card.jm-hero-end { background: linear-gradient(145deg, #ffffff 0%, #e0f2fe 100%); border: 2.5px solid #0ea5e9; }
     .jm-node-card.jm-hero-end .jm-year-badge { background: linear-gradient(135deg, #0284c7, #38bdf8); }
 
+    /* تأثير الحركة الحيوية (Float Animation) لصورة جودي والروبوت */
     .jm-char-portrait {
       width: 110px;
       height: 135px;
@@ -283,10 +284,26 @@
       border: 3px solid #ffffff;
       box-shadow: 0 10px 24px rgba(109, 40, 217, 0.2);
       background: #ede9fe;
+      animation: jmCharFloat 3.5s ease-in-out infinite;
     }
 
-    .jm-hero-end .jm-char-portrait { background: #e0f2fe; box-shadow: 0 10px 24px rgba(14, 165, 233, 0.22); }
-    .jm-char-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .jm-hero-end .jm-char-portrait {
+      background: #e0f2fe;
+      box-shadow: 0 10px 24px rgba(14, 165, 233, 0.22);
+      animation-delay: 1.5s;
+    }
+
+    @keyframes jmCharFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .jm-char-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
 
     .jm-tech-step-icon {
       position: absolute;
@@ -433,7 +450,8 @@
         <div class="jm-node-card jm-hero-start">
           <span class="jm-tech-step-icon">✨</span>
           <div class="jm-char-portrait">
-            <img src="judy.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Judy&background=6d28d9&color=fff&size=200&bold=true'" alt="جودي - نقطة الانطلاق 2018">
+            <!-- استخدام صورة جودي الحقيقية المرفقة -->
+            <img src="judy.jpeg" onerror="this.src='judy.jpg'" alt="جودي - نقطة الانطلاق 2018">
           </div>
           <div class="jm-year-badge"><span class="jm-year-dot"></span> 2018 - نقطة الانطلاق</div>
           <h4 class="jm-node-title">البدايات وتأسيس المتاجر العريقة</h4>
@@ -553,7 +571,8 @@
         <div class="jm-node-card jm-hero-end">
           <span class="jm-tech-step-icon">🤖</span>
           <div class="jm-char-portrait">
-            <img src="robot.jpg" onerror="this.src='https://ui-avatars.com/api/?name=AI+2026&background=0284c7&color=fff&size=200&bold=true'" alt="الروبوت الذكي 2026">
+            <!-- استخدام صورة الروبوت الحقيقية المرفقة -->
+            <img src="robot.png" onerror="this.src='robot.jpg'" alt="الروبوت الذكي 2026">
           </div>
           <div class="jm-year-badge"><span class="jm-year-dot"></span> 2026 - عصر الذكاء</div>
           <h4 class="jm-node-title">الجيل الجديد من المتاجر الذكية</h4>
@@ -639,7 +658,7 @@
 
       <div class="jm-project-card" data-cat="tech">
         <div>
-          <span class="jm-proj-cat">الأنظمة الأمنية والكاميرات</span>
+          <span class="jm-proj-cat">الseo والأنظمة</span>
           <h3>هيكفيجن للكاميرات (Hikvision)</h3>
           <p>تنظيم تقني دقيق للمنتجات والمواصفات الفنية مع تصميم واجهة احترافية تعزز ثقة الشركات والأفراد.</p>
         </div>
