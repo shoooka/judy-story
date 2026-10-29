@@ -38,8 +38,8 @@
     .jm-navbar {
       max-width: 1240px;
       margin: 20px auto;
-      padding: 12px 24px;
-      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 24px;
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(14px);
       border: 1px solid rgba(109, 40, 217, 0.12);
       border-radius: 22px;
@@ -55,24 +55,17 @@
     .jm-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       color: var(--jm-primary-dark);
       font-weight: 900;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
     }
 
-    .jm-brand-badge {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--jm-primary-dark), var(--jm-primary));
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 1.1rem;
+    .jm-brand-logo {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
     }
 
     .jm-nav-links {
@@ -274,7 +267,6 @@
     .jm-node-card.jm-hero-end { background: linear-gradient(145deg, #ffffff 0%, #e0f2fe 100%); border: 2.5px solid #0ea5e9; }
     .jm-node-card.jm-hero-end .jm-year-badge { background: linear-gradient(135deg, #0284c7, #38bdf8); }
 
-    /* تأثير الحركة الحيوية (Float Animation) لصورة جودي والروبوت */
     .jm-char-portrait {
       width: 110px;
       height: 135px;
@@ -390,8 +382,9 @@
 
   <nav class="jm-navbar">
     <a href="https://judymarketing.com" class="jm-brand">
-      <span class="jm-brand-badge">J</span>
-      <span>جودي ماركتنج</span>
+      <!-- رفع ملف الشعار باسم logo.png في المستودع -->
+      <img src="logo.png" onerror="this.style.display='none'" alt="Judy Marketing" class="jm-brand-logo">
+      <span>جودي ماركتنج Judy Marketing</span>
     </a>
     <div class="jm-nav-links">
       <a href="#story-map" class="jm-nav-btn">رحلتنا (2018 - 2026)</a>
@@ -450,7 +443,6 @@
         <div class="jm-node-card jm-hero-start">
           <span class="jm-tech-step-icon">✨</span>
           <div class="jm-char-portrait">
-            <!-- استخدام صورة جودي الحقيقية المرفقة -->
             <img src="judy.jpeg" onerror="this.src='judy.jpg'" alt="جودي - نقطة الانطلاق 2018">
           </div>
           <div class="jm-year-badge"><span class="jm-year-dot"></span> 2018 - نقطة الانطلاق</div>
@@ -571,7 +563,6 @@
         <div class="jm-node-card jm-hero-end">
           <span class="jm-tech-step-icon">🤖</span>
           <div class="jm-char-portrait">
-            <!-- استخدام صورة الروبوت الحقيقية المرفقة -->
             <img src="robot.png" onerror="this.src='robot.jpg'" alt="الروبوت الذكي 2026">
           </div>
           <div class="jm-year-badge"><span class="jm-year-dot"></span> 2026 - عصر الذكاء</div>
@@ -658,7 +649,7 @@
 
       <div class="jm-project-card" data-cat="tech">
         <div>
-          <span class="jm-proj-cat">الseo والأنظمة</span>
+          <span class="jm-proj-cat">التقنية والأنظمة</span>
           <h3>هيكفيجن للكاميرات (Hikvision)</h3>
           <p>تنظيم تقني دقيق للمنتجات والمواصفات الفنية مع تصميم واجهة احترافية تعزز ثقة الشركات والأفراد.</p>
         </div>
