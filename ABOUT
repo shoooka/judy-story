@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قصتنا وأعمالنا | جودي ماركتنج - Judy Marketing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --jm-primary: #6d28d9;
+      --jm-primary-dark: #4c1d95;
+      --jm-primary-light: #a78bfa;
+      --jm-cyan: #0ea5e9;
+      --jm-bg: #f8f7ff;
+      --jm-card: #ffffff;
+      --jm-text: #1e1b4b;
+      --jm-muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: radial-gradient(circle at top right, #f3e8ff 0%, #f8f7ff 45%, #eef2ff 100%);
+      color: var(--jm-text);
+      direction: rtl;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .jm-navbar {
+      max-width: 1240px;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(109, 40, 217, 0.12);
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 30px rgba(30, 27, 75, 0.06);
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+    }
+
+    .jm-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--jm-primary-dark);
+      font-weight: 900;
+      font-size: 1.25rem;
+    }
+
+    .jm-brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--jm-primary-dark), var(--jm-primary));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .jm-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .jm-nav-btn {
+      text-decoration: none;
+      color: var(--jm-text);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 8px 18px;
+      border-radius: 14px;
+      transition: all 0.25s ease;
+    }
+
+    .jm-nav-btn:hover {
+      background: #f3e8ff;
+      color: var(--jm-primary);
+    }
+
+    .jm-nav-btn.primary-cta {
+      background: linear-gradient(135deg, var(--jm-primary-dark), var(--jm-primary));
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(109, 40, 217, 0.25);
+    }
+
+    .jm-hero {
+      max-width: 1100px;
+      margin: 40px auto 20px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .jm-pill-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 55%, #a78bfa 100%);
+      color: #ffffff;
+      padding: 8px 26px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 20px rgba(109, 40, 217, 0.24);
+    }
+
+    .jm-hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      color: var(--jm-text);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .jm-hero p {
+      font-size: 1.05rem;
+      color: var(--jm-muted);
+      max-width: 740px;
+      margin: 0 auto 30px;
+    }
+
+    .jm-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      max-width: 920px;
+      margin: 0 auto 30px;
+    }
+
+    .jm-stat-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(109, 40, 217, 0.14);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 8px 25px rgba(109, 40, 217, 0.05);
+    }
+
+    .jm-stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--jm-primary-dark), var(--jm-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .jm-stat-label {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--jm-muted);
+    }
+
+    .jm-story-wrapper {
+      max-width: 1240px;
+      margin: 30px auto 60px;
+      padding: 20px 16px;
+      position: relative;
+    }
+
+    .jm-road-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 54px;
+      padding: 25px 10px;
+    }
+
+    .jm-road-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .jm-road-pulse {
+      stroke-dasharray: 16 20;
+      animation: jmPulseFlow 15s linear infinite;
+    }
+
+    @keyframes jmPulseFlow {
+      from { stroke-dashoffset: 600; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    .jm-road-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      position: relative;
+      z-index: 3;
+      align-items: stretch;
+    }
+
+    @media (min-width: 992px) {
+      .jm-road-row.row-reverse { direction: ltr; }
+      .jm-road-row.row-reverse .jm-node-card { direction: rtl; }
+    }
+
+    .jm-node-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1.5px solid rgba(109, 40, 217, 0.14);
+      border-radius: 24px;
+      padding: 24px 18px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(30, 27, 75, 0.06);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .jm-node-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(109, 40, 217, 0.15);
+      border-color: var(--jm-primary);
+    }
+
+    .jm-year-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, #4c1d95, #7c3aed);
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 6px 22px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 16px rgba(109, 40, 217, 0.25);
+    }
+
+    .jm-year-dot { width: 8px; height: 8px; background: #38bdf8; border-radius: 50%; }
+    .jm-node-title { font-size: 1rem; font-weight: 800; color: var(--jm-text); margin-bottom: 8px; }
+    .jm-node-desc { font-size: 0.84rem; color: var(--jm-muted); margin-bottom: 14px; }
+    .jm-tags-wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; width: 100%; }
+
+    .jm-store-pill {
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      color: #4c1d95;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 11px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .jm-store-pill:hover { background: var(--jm-primary); color: #ffffff; border-color: var(--jm-primary); }
+    .jm-store-pill.highlight { background: linear-gradient(135deg, #ede9fe, #e0e7ff); border-color: #a78bfa; color: #3b0764; }
+
+    .jm-node-card.jm-hero-start { background: linear-gradient(145deg, #ffffff 0%, #f3e8ff 100%); border: 2.5px solid #7c3aed; }
+    .jm-node-card.jm-hero-end { background: linear-gradient(145deg, #ffffff 0%, #e0f2fe 100%); border: 2.5px solid #0ea5e9; }
+    .jm-node-card.jm-hero-end .jm-year-badge { background: linear-gradient(135deg, #0284c7, #38bdf8); }
+
+    .jm-char-portrait {
+      width: 110px;
+      height: 135px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 10px 24px rgba(109, 40, 217, 0.2);
+      background: #ede9fe;
+    }
+
+    .jm-hero-end .jm-char-portrait { background: #e0f2fe; box-shadow: 0 10px 24px rgba(14, 165, 233, 0.22); }
+    .jm-char-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+    .jm-tech-step-icon {
+      position: absolute;
+      top: -16px;
+      left: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      background: #ffffff;
+      border: 1px solid #ddd6fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .jm-portfolio-section { max-width: 1200px; margin: 40px auto 70px; padding: 0 16px; text-align: center; }
+    .jm-filter-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 24px 0 32px; }
+
+    .jm-filter-btn {
+      background: #ffffff;
+      border: 1px solid #ddd6fe;
+      color: var(--jm-text);
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .jm-filter-btn.active, .jm-filter-btn:hover {
+      background: linear-gradient(135deg, var(--jm-primary-dark), var(--jm-primary));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 6px 16px rgba(109, 40, 217, 0.22);
+    }
+
+    .jm-projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); gap: 20px; }
+
+    .jm-project-card {
+      background: #ffffff;
+      border: 1px solid rgba(109, 40, 217, 0.12);
+      border-radius: 20px;
+      padding: 22px;
+      text-align: right;
+      box-shadow: 0 8px 24px rgba(30, 27, 75, 0.04);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .jm-project-card:hover { transform: translateY(-5px); border-color: var(--jm-primary); box-shadow: 0 14px 32px rgba(109, 40, 217, 0.12); }
+    .jm-proj-cat { display: inline-block; background: #f5f3ff; color: var(--jm-primary); font-size: 0.76rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-bottom: 8px; }
+    .jm-project-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--jm-text); margin-bottom: 6px; }
+    .jm-project-card p { font-size: 0.86rem; color: var(--jm-muted); }
+
+    .jm-proj-year {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #9ca3af;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .jm-footer { text-align: center; padding: 30px 16px; background: #1e1b4b; color: #e0e7ff; font-size: 0.9rem; }
+
+    @media (max-width: 991px) {
+      .jm-road-svg { display: none; }
+      .jm-road-row { grid-template-columns: 1fr; gap: 20px; }
+      .jm-road-container { gap: 20px; }
+      .jm-navbar { width: calc(100% - 24px); padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="jm-navbar">
+    <a href="https://judymarketing.com" class="jm-brand">
+      <span class="jm-brand-badge">J</span>
+      <span>جودي ماركتنج</span>
+    </a>
+    <div class="jm-nav-links">
+      <a href="#story-map" class="jm-nav-btn">رحلتنا (2018 - 2026)</a>
+      <a href="#portfolio" class="jm-nav-btn">أعمالنا المميزة</a>
+      <a href="https://judymarketing.com" class="jm-nav-btn primary-cta">العودة للمتجر ⬅️</a>
+    </div>
+  </nav>
+
+  <header class="jm-hero">
+    <span class="jm-pill-badge">✨ قصتنا ومسيرة أعمالنا (2018 - 2026)</span>
+    <h1>من تأسيس أول متجر إلكتروني.. إلى صناعة المتاجر الذكية</h1>
+    <p>رحلة شغف بدأت منذ عام 2018 في تصميم وتطوير المتاجر الإلكترونية، تحسين محركات البحث (SEO)، وبناء الهويات البصرية لعشرات العلامات التجارية الرائدة في الخليج.</p>
+
+    <div class="jm-stats-bar">
+      <div class="jm-stat-card">
+        <span class="jm-stat-num">+1,700</span>
+        <span class="jm-stat-label">طلب ومشروع مكتمل</span>
+      </div>
+      <div class="jm-stat-card">
+        <span class="jm-stat-num">+900</span>
+        <span class="jm-stat-label">تقييم إيجابي موثق</span>
+      </div>
+      <div class="jm-stat-card">
+        <span class="jm-stat-num">8+ سنوات</span>
+        <span class="jm-stat-label">خبرة في التجارة الإلكترونية</span>
+      </div>
+      <div class="jm-stat-card">
+        <span class="jm-stat-num">100%</span>
+        <span class="jm-stat-label">تصاميم مخصصة للهوية</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="jm-story-wrapper" id="story-map">
+    <div class="jm-road-container">
+      
+      <svg class="jm-road-svg" viewBox="0 0 1100 680" fill="none" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="jmTechLine" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#4c1d95" />
+            <stop offset="50%" stop-color="#7c3aed" />
+            <stop offset="100%" stop-color="#0ea5e9" />
+          </linearGradient>
+        </defs>
+        <path d="M 950 115 L 150 115 C 40 115, 40 340, 150 340 L 950 340 C 1060 340, 1060 565, 950 565 L 150 565"
+              stroke="url(#jmTechLine)" stroke-width="20" stroke-linecap="round" opacity="0.1" />
+        <path d="M 950 115 L 150 115 C 40 115, 40 340, 150 340 L 950 340 C 1060 340, 1060 565, 950 565 L 150 565"
+              stroke="url(#jmTechLine)" stroke-width="4" stroke-linecap="round" opacity="0.45" />
+        <path class="jm-road-pulse"
+              d="M 950 115 L 150 115 C 40 115, 40 340, 150 340 L 950 340 C 1060 340, 1060 565, 950 565 L 150 565"
+              stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" />
+      </svg>
+
+      <div class="jm-road-row">
+        
+        <div class="jm-node-card jm-hero-start">
+          <span class="jm-tech-step-icon">✨</span>
+          <div class="jm-char-portrait">
+            <img src="judy.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Judy&background=6d28d9&color=fff&size=200&bold=true'" alt="جودي - نقطة الانطلاق 2018">
+          </div>
+          <div class="jm-year-badge"><span class="jm-year-dot"></span> 2018 - نقطة الانطلاق</div>
+          <h4 class="jm-node-title">البدايات وتأسيس المتاجر العريقة</h4>
+          <p class="jm-node-desc">انطلاقة شغف جودي مع أولى العلامات التجارية الكبرى في العود والأحذية.</p>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill highlight">متجر عبد المجيد بانافع للعود</span>
+            <span class="jm-store-pill highlight">متجر سجح للأحذية</span>
+          </div>
+        </div>
+
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">💳</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2019</div>
+            <h4 class="jm-node-title">التوسع الخليجي والمنصات الرقمية</h4>
+            <p class="jm-node-desc">تطوير واجهات منصات الدفع والفوترة والمتاجر المتخصصة في الخليج.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill highlight">منصة فاتورة القطرية</span>
+            <span class="jm-store-pill">متاجر العطور والبخور</span>
+            <span class="jm-store-pill">هويات تجارية</span>
+          </div>
+        </div>
+
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">🛒</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2020</div>
+            <h4 class="jm-node-title">طفرة التجارة الإلكترونية</h4>
+            <p class="jm-node-desc">تحويل عشرات المشاريع التقليدية إلى متاجر إلكترونية متكاملة وعالية التحويل.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill">متاجر القهوة المختصة</span>
+            <span class="jm-store-pill">متاجر التمور والعسل</span>
+            <span class="jm-store-pill">متاجر الأزياء</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="jm-road-row row-reverse">
+        
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">📈</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2021</div>
+            <h4 class="jm-node-title">احتراف السيو (SEO) وتصدر جوجل</h4>
+            <p class="jm-node-desc">إطلاق خدمات تهيئة المتاجر لمحركات البحث ومضاعفة الزيارات المجانية.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill">تصدر نتائج البحث</span>
+            <span class="jm-store-pill">متاجر العبايات</span>
+            <span class="jm-store-pill">متاجر العناية والتجميل</span>
+          </div>
+        </div>
+
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">&lt;/&gt;</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2022</div>
+            <h4 class="jm-node-title">تخصيص CSS المتقدم والأنظمة الأمنية</h4>
+            <p class="jm-node-desc">ابتكار واجهات مخصصة بالكود البرمجي لمتاجر الإلكترونيات والأمن.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill highlight">هيكفيجن للكاميرات (Hikvision)</span>
+            <span class="jm-store-pill highlight">متجر شوق</span>
+            <span class="jm-store-pill">شركاء سلة</span>
+          </div>
+        </div>
+
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">💎</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2023</div>
+            <h4 class="jm-node-title">قطاع الذهب والعيادات الطبية</h4>
+            <p class="jm-node-desc">تصميم متاجر فاخرة لقطاعات الذهب والمجوهرات والمراكز الطبية.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill highlight">خام الوطن للذهب</span>
+            <span class="jm-store-pill highlight">عيادات بقدو</span>
+            <span class="jm-store-pill">تصاميم الهوية الفاخرة</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="jm-road-row">
+        
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">🎬</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2024</div>
+            <h4 class="jm-node-title">قطاع السيارات والبيوت الذكية</h4>
+            <p class="jm-node-desc">دمج التصميم الإبداعي مع فيديوهات الموشن جرافيك وإعلانات التيك توك.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill highlight">كار إيديشن للسيارات</span>
+            <span class="jm-store-pill highlight">هيرش العز للعود</span>
+            <span class="jm-store-pill highlight">Renza Store</span>
+          </div>
+        </div>
+
+        <div class="jm-node-card">
+          <span class="jm-tech-step-icon">🏆</span>
+          <div>
+            <div class="jm-year-badge"><span class="jm-year-dot"></span> 2025</div>
+            <h4 class="jm-node-title">+1,700 مشروع وأدوات تفاعلية</h4>
+            <p class="jm-node-desc">تحقيق أكثر من 900 تقييم إيجابي وإطلاق الدورات والكتب الرقمية للتجار.</p>
+          </div>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill">+1,700 طلب مكتمل</span>
+            <span class="jm-store-pill">أكاديمية وكتب جودي</span>
+            <span class="jm-store-pill">باقات التوفير الشاملة</span>
+          </div>
+        </div>
+
+        <div class="jm-node-card jm-hero-end">
+          <span class="jm-tech-step-icon">🤖</span>
+          <div class="jm-char-portrait">
+            <img src="robot.jpg" onerror="this.src='https://ui-avatars.com/api/?name=AI+2026&background=0284c7&color=fff&size=200&bold=true'" alt="الروبوت الذكي 2026">
+          </div>
+          <div class="jm-year-badge"><span class="jm-year-dot"></span> 2026 - عصر الذكاء</div>
+          <h4 class="jm-node-title">الجيل الجديد من المتاجر الذكية</h4>
+          <p class="jm-node-desc">دمج الذكاء الاصطناعي، التقييمات الصوتية، وتجارب التسوق التفاعلية (Gamification).</p>
+          <div class="jm-tags-wrap">
+            <span class="jm-store-pill highlight">مستشار المتاجر الذكي</span>
+            <span class="jm-store-pill highlight">التقييمات الصوتية</span>
+            <span class="jm-store-pill highlight">أتمتة المبيعات</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="jm-portfolio-section" id="portfolio">
+    <span class="jm-pill-badge">📂 سجل أعمالنا المختارة</span>
+    <h2>شركاء النجاح الذين تشرفنا بتطوير متاجرهم</h2>
+
+    <div class="jm-filter-tabs">
+      <button class="jm-filter-btn active" onclick="filterJmProjects('all', this)">الكل</button>
+      <button class="jm-filter-btn" onclick="filterJmProjects('oud', this)">العود والعطور والذهب</button>
+      <button class="jm-filter-btn" onclick="filterJmProjects('tech', this)">التقنية والمنصات والسيارات</button>
+      <button class="jm-filter-btn" onclick="filterJmProjects('fashion', this)">الأزياء والعيادات والتجزئة</button>
+    </div>
+
+    <div class="jm-projects-grid" id="jmProjectsGrid">
+      
+      <div class="jm-project-card" data-cat="oud">
+        <div>
+          <span class="jm-proj-cat">العود والعطور</span>
+          <h3>متجر عبد المجيد بانافع للعود</h3>
+          <p>من أوائل وأعرق المتاجر التي عملنا على تطوير واجهتها وتجربة التسوق فيها لإبراز فخامة العود والعطور.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2018</span><span>⭐ مشروع مميز</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="fashion">
+        <div>
+          <span class="jm-proj-cat">الأحذية والموضة</span>
+          <h3>متجر سجح للأحذية</h3>
+          <p>تأسيس وتصميم واجهة عصرية سهلة التصفح مع تقسيم احترافي للمقاسات والتصنيفات لرفع معدل التحويل.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2018</span><span>⭐ مشروع مميز</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="tech">
+        <div>
+          <span class="jm-proj-cat">منصات وحلول دفع</span>
+          <h3>منصة فاتورة القطرية</h3>
+          <p>العمل على تحسين الواجهات وتجربة المستخدم لمنصة الفوترة والتحصيل الإلكتروني في السوق القطري.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2019</span><span>⭐ توسع خليجي</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="oud">
+        <div>
+          <span class="jm-proj-cat">الذهب والمجوهرات</span>
+          <h3>متجر خام الوطن للذهب</h3>
+          <p>تصميم واجهة ملكية فاخرة تعكس بريق الذهب والمجوهرات مع تخصيص CSS متكامل وترتيب الأقسام.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2023</span><span>💎 هوية فاخرة</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="fashion">
+        <div>
+          <span class="jm-proj-cat">القطاع الطبي والعيادات</span>
+          <h3>عيادات بقدو</h3>
+          <p>تصميم واجهة طبية مريحة وموثوقة تسهل حجز واستعراض الخدمات العلاجية والتجميلية بأعلى احترافية.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2023</span><span>🏥 قطاع طبي</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="tech">
+        <div>
+          <span class="jm-proj-cat">السيارات والإكسسوارات</span>
+          <h3>كار إيديشن للسيارات</h3>
+          <p>تطوير شامل لواجهة المتجر والبنرات الترويجية مع تهيئة محركات البحث (SEO) لتصدر الكلمات المفتاحية.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2024</span><span>🚗 تصميم وسيو</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="tech">
+        <div>
+          <span class="jm-proj-cat">الأنظمة الأمنية والكاميرات</span>
+          <h3>هيكفيجن للكاميرات (Hikvision)</h3>
+          <p>تنظيم تقني دقيق للمنتجات والمواصفات الفنية مع تصميم واجهة احترافية تعزز ثقة الشركات والأفراد.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2022</span><span>📹 أنظمة تقنية</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="oud">
+        <div>
+          <span class="jm-proj-cat">العود والبخور الفاخر</span>
+          <h3>هيرش العز للعود</h3>
+          <p>تصميم هوية بصرية وبنرات ومفاهيم فيديو إعلانية تبرز أصالة وفخامة العود السعودي.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2024</span><span>✨ موشن وهوية</span></div>
+      </div>
+
+      <div class="jm-project-card" data-cat="tech">
+        <div>
+          <span class="jm-proj-cat">المنتجات الذكية</span>
+          <h3>متجر Renza Store</h3>
+          <p>تطوير واجهة عصرية لمنتجات المنزل الذكي مع محتوى مرئي تفاعلي يوضح مميزات كل منتج.</p>
+        </div>
+        <div class="jm-proj-year"><span>محطة 2024</span><span>⚡ متجر ذكي</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="jm-footer">
+    <p>جميع الحقوق محفوظة © جودي ماركتنج (Judy Marketing) 2018 - 2026 | نصنع المتاجر التي تحقق الأرباح</p>
+  </footer>
+
+  <script>
+    function filterJmProjects(category, btn) {
+      document.querySelectorAll('.jm-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.jm-project-card').forEach(card => {
+        if (category === 'all' || card.dataset.cat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
